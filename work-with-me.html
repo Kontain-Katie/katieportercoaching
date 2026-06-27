@@ -37,131 +37,32 @@
     z-index: 100;
   }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo svg { width: 36px; height: 36px; }
-  .nav-logo-text { font-size: 15px; font-weight: 600; color: var(--purple); line-height: 1.2; }
-  .nav-logo-sub { font-size: 11px; color: var(--text-muted); font-weight: 400; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { text-decoration: none; font-size: 14px; color: var(--text-secondary); font-weight: 500; transition: color 0.15s; }
   .nav-links a:hover, .nav-links a.active { color: var(--purple); }
   .nav-cta { background: var(--purple); color: white !important; padding: 8px 18px; border-radius: 8px; font-size: 13px !important; }
   .nav-cta:hover { background: var(--purple-dark) !important; color: white !important; }
 
-  .page-hero {
-    background: linear-gradient(135deg, var(--purple-pale) 0%, var(--purple-light) 100%);
-    padding: 4rem 2rem 3rem;
-    text-align: center;
-  }
+  .page-hero { background: linear-gradient(135deg, var(--purple-pale) 0%, var(--purple-light) 100%); padding: 4rem 2rem 3rem; text-align: center; }
   .page-hero .label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple-mid); margin-bottom: 0.75rem; }
   .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--purple-dark); line-height: 1.25; }
   .page-hero p { font-size: 1rem; color: var(--text-secondary); max-width: 520px; margin: 1rem auto 0; line-height: 1.7; }
 
-  .content {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .content h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--purple);
-    margin-bottom: 1.25rem;
-    margin-top: 2.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
+  .content { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; }
+  .content h2 { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--purple); margin-bottom: 1.25rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
   .content h2:first-child { margin-top: 0; }
+  .content p { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
 
-  .content p {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 1rem;
-  }
+  .steps { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem; }
+  .step { display: flex; gap: 1rem; align-items: flex-start; background: var(--surface); border: 0.5px solid var(--border-strong); border-radius: var(--radius); padding: 1rem 1.25rem; }
+  .step-num { background: var(--purple-light); color: var(--purple); font-weight: 700; font-size: 13px; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.2rem; }
+  .step-body p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.6; }
 
-  /* Session steps */
-  .steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .step {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    background: var(--surface);
-    border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-  }
-
-  .step-num {
-    background: var(--purple-light);
-    color: var(--purple);
-    font-weight: 700;
-    font-size: 13px;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .step-body h3 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.2rem;
-  }
-
-  .step-body p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0;
-    line-height: 1.6;
-  }
-
-  /* Practical details */
-  .details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-top: 0.5rem;
-  }
-
-  @media (max-width: 560px) {
-    .details-grid { grid-template-columns: 1fr; }
-  }
-
-  .detail-card {
-    background: var(--purple-pale);
-    border-radius: var(--radius);
-    padding: 1.1rem 1.25rem;
-    border: 0.5px solid var(--border);
-  }
-
-  .detail-card h3 {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--purple-mid);
-    margin-bottom: 0.4rem;
-  }
-
-  .detail-card p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0;
-    line-height: 1.6;
-  }
+  .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem; }
+  .detail-card { background: var(--purple-pale); border-radius: var(--radius); padding: 1.1rem 1.25rem; border: 0.5px solid var(--border); }
+  .detail-card h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple-mid); margin-bottom: 0.4rem; }
+  .detail-card p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.6; }
 
   .bottom-cta { background: var(--purple-dark); padding: 4rem 2rem; text-align: center; }
   .bottom-cta h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: white; margin-bottom: 0.75rem; }
@@ -175,9 +76,12 @@
   footer a:hover { color: white; }
 
   @media (max-width: 640px) {
-    nav { padding: 0 1rem; }
-    .nav-links { gap: 1rem; }
+    nav { padding: 0.5rem 0.75rem; height: auto; flex-wrap: wrap; gap: 0.5rem; }
+    .nav-links { gap: 0.6rem; flex-wrap: wrap; }
+    .nav-links a { font-size: 12px; }
+    .nav-cta { padding: 6px 10px; font-size: 11px !important; }
     .content { padding: 2.5rem 1.25rem; }
+    .details-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -202,77 +106,27 @@
 </div>
 
 <div class="content">
-
   <h2>What is coaching?</h2>
   <p>Coaching isn't advice, and it isn't therapy. It's a structured conversation that helps you get clearer on what you want, understand what's getting in the way, and decide what to do next. I ask the questions — you find the answers.</p>
   <p>Sessions are confidential and completely led by your agenda. There's no judgement, no pressure, and no prescribed outcome. Just space to think.</p>
 
   <h2>How a session works</h2>
   <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <h3>Check in</h3>
-        <p>We start by making sure you're settled and ready. A moment to arrive before we begin.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <h3>Set your goal for the session</h3>
-        <p>You tell me what you'd like to focus on today. We agree on what a good outcome looks like.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <h3>Explore where you are now</h3>
-        <p>We look honestly at your current situation — what's happening, how it feels, what you've already tried.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <h3>Open up your options</h3>
-        <p>Together we explore possibilities you may not have considered. What could you do? What would help?</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">5</div>
-      <div class="step-body">
-        <h3>Decide on your next step</h3>
-        <p>You leave with something concrete — a commitment to yourself, however small, that moves you forward.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">6</div>
-      <div class="step-body">
-        <h3>Close and reflect</h3>
-        <p>We end with a key takeaway from the session — something you'll carry with you.</p>
-      </div>
-    </div>
+    <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Check in</h3><p>We start by making sure you're settled and ready. A moment to arrive before we begin.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Set your goal for the session</h3><p>You tell me what you'd like to focus on today. We agree on what a good outcome looks like.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Explore where you are now</h3><p>We look honestly at your current situation — what's happening, how it feels, what you've already tried.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Open up your options</h3><p>Together we explore possibilities you may not have considered. What could you do? What would help?</p></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Decide on your next step</h3><p>You leave with something concrete — a commitment to yourself, however small, that moves you forward.</p></div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-body"><h3>Close and reflect</h3><p>We end with a key takeaway from the session — something you'll carry with you.</p></div></div>
   </div>
 
   <h2>Practical details</h2>
   <div class="details-grid">
-    <div class="detail-card">
-      <h3>Format</h3>
-      <p>Sessions available in person or online via video call.</p>
-    </div>
-    <div class="detail-card">
-      <h3>Introductory call</h3>
-      <p>A free, no-obligation call to see if we're a good fit before we begin.</p>
-    </div>
-    <div class="detail-card">
-      <h3>Confidentiality</h3>
-      <p>Everything discussed in sessions is completely confidential.</p>
-    </div>
-    <div class="detail-card">
-      <h3>Cancellations</h3>
-      <p>Please give as much notice as possible if you need to rearrange.</p>
-    </div>
+    <div class="detail-card"><h3>Format</h3><p>Sessions available in person or online via video call.</p></div>
+    <div class="detail-card"><h3>Introductory call</h3><p>A free, no-obligation call to see if we're a good fit before we begin.</p></div>
+    <div class="detail-card"><h3>Confidentiality</h3><p>Everything discussed in sessions is completely confidential.</p></div>
+    <div class="detail-card"><h3>Cancellations</h3><p>Please give as much notice as possible if you need to rearrange.</p></div>
   </div>
-
 </div>
 
 <div class="bottom-cta">
