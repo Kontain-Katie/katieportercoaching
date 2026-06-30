@@ -64,13 +64,13 @@
   .intro-strip-inner p:last-child { margin-bottom: 0; }
 
   .testimonials-bg { background: var(--purple-light); padding: 4rem 2rem; }
-  .testimonials-inner { max-width: 860px; margin: 0 auto; }
+  .testimonials-inner { max-width: 1100px; margin: 0 auto; }
   .testimonials-inner .section-label, .testimonials-inner h2 { text-align: center; }
   .testimonials-inner h2 { margin-bottom: 2.5rem; }
-  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .testimonial-card { background: white; border-radius: var(--radius); padding: 1.5rem; border: 0.5px solid var(--border-strong); }
-  .testimonial-card blockquote { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin-bottom: 0.75rem; }
-  .testimonial-card cite { font-size: 0.85rem; font-weight: 700; color: var(--purple); font-style: normal; }
+  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  .testimonial-card { background: #faf7fd; border-radius: 8px; padding: 1.75rem 1.75rem 1.5rem; border-left: 3px solid var(--purple); position: relative; display: flex; flex-direction: column; height: 100%; }
+  .testimonial-card blockquote { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin: 0 0 0.5rem; flex-grow: 1; }
+  .testimonial-card cite { font-size: 1rem; font-weight: 600; color: var(--text-secondary); font-style: normal; display: flex; align-items: center; gap: 0.6rem; }
 
   .wheel-cta { background: var(--surface); border: 0.5px solid var(--border-strong); border-radius: var(--radius); padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; margin-top: 2.5rem; }
   .wheel-cta-text h3 { font-size: 1rem; font-weight: 700; color: var(--purple-dark); margin-bottom: 0.3rem; }
@@ -101,6 +101,10 @@
     5%   { opacity: 0.8; }
     92%  { opacity: 0.7; }
     100% { transform: translate(calc(-110vw), var(--drift)); opacity: 0; }
+  }
+
+  @media (max-width: 860px) and (min-width: 641px) {
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
   }
 
   @media (max-width: 640px) {
@@ -134,114 +138,154 @@
 <section class="hero">
 
   <!-- Butterflies -->
-  <div class="butterfly" style="top:15%; left:-8%; width:90px; height:90px; animation:fly-ltr 28s linear 0s infinite; --drift:-50px;">
+  <div class="butterfly" style="top:15%; left:-8%; width:130px; height:130px; animation:fly-ltr 28s linear 0s infinite; --drift:-50px;">
     <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#9966cc" opacity="0.78">
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; 25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.55s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#7a4fa3" opacity="0.65">
+        <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,21 C25,16 18,10 11,11 C6,12 7,19 11,21 C16,23 22,22 28,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; 20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.55s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#9966cc" opacity="0.78">
+        <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,26 C24,25 16,24 12,28 C9,32 12,37 17,35 C22,33 26,30 28,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; -25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.55s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#7a4fa3" opacity="0.65">
+        <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,21 C35,16 42,10 49,11 C54,12 53,19 49,21 C44,23 38,22 32,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; -20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.55s" repeatCount="indefinite"/>
-      </path>
-      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#2d1045" opacity="0.85"/>
-      <circle cx="30" cy="16" r="2.2" fill="#2d1045" opacity="0.85"/>
-      <path d="M30,16 Q26,10 22,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="22" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
-      <path d="M30,16 Q34,10 38,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="38" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
+        <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,26 C36,25 44,24 48,28 C51,32 48,37 43,35 C38,33 34,30 32,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#1c1422" opacity="0.92"/>
+      <circle cx="30" cy="16" r="2.2" fill="#1c1422" opacity="0.92"/>
+      <path d="M30,16 Q26,10 22,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="22" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
+      <path d="M30,16 Q34,10 38,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="38" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
     </svg>
   </div>
-  <div class="butterfly" style="top:58%; left:105%; width:80px; height:80px; animation:fly-rtl 22s linear 6s infinite; --drift:40px;">
+  <div class="butterfly" style="top:58%; left:105%; width:120px; height:120px; animation:fly-rtl 22s linear 6s infinite; --drift:40px;">
     <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#7a92ad" opacity="0.78">
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; 25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.32s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#647a93" opacity="0.65">
+        <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,21 C25,16 18,10 11,11 C6,12 7,19 11,21 C16,23 22,22 28,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; 20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.32s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#7a92ad" opacity="0.78">
+        <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,26 C24,25 16,24 12,28 C9,32 12,37 17,35 C22,33 26,30 28,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; -25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.32s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#647a93" opacity="0.65">
+        <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,21 C35,16 42,10 49,11 C54,12 53,19 49,21 C44,23 38,22 32,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; -20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.32s" repeatCount="indefinite"/>
-      </path>
-      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#2d1045" opacity="0.85"/>
-      <circle cx="30" cy="16" r="2.2" fill="#2d1045" opacity="0.85"/>
-      <path d="M30,16 Q26,10 22,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="22" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
-      <path d="M30,16 Q34,10 38,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="38" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
+        <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,26 C36,25 44,24 48,28 C51,32 48,37 43,35 C38,33 34,30 32,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#1c1422" opacity="0.92"/>
+      <circle cx="30" cy="16" r="2.2" fill="#1c1422" opacity="0.92"/>
+      <path d="M30,16 Q26,10 22,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="22" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
+      <path d="M30,16 Q34,10 38,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="38" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
     </svg>
   </div>
-  <div class="butterfly" style="top:35%; left:-8%; width:34px; height:34px; animation:fly-ltr 20s linear 2s infinite; --drift:30px;">
+  <div class="butterfly" style="top:35%; left:-8%; width:60px; height:60px; animation:fly-ltr 20s linear 2s infinite; --drift:30px;">
     <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#a6878d" opacity="0.78">
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; 25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.42s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#8f7176" opacity="0.65">
+        <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,21 C25,16 18,10 11,11 C6,12 7,19 11,21 C16,23 22,22 28,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; 20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.42s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#a6878d" opacity="0.78">
+        <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,26 C24,25 16,24 12,28 C9,32 12,37 17,35 C22,33 26,30 28,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; -25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.42s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#8f7176" opacity="0.65">
+        <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,21 C35,16 42,10 49,11 C54,12 53,19 49,21 C44,23 38,22 32,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; -20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.42s" repeatCount="indefinite"/>
-      </path>
-      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#2d1045" opacity="0.85"/>
-      <circle cx="30" cy="16" r="2.2" fill="#2d1045" opacity="0.85"/>
-      <path d="M30,16 Q26,10 22,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="22" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
-      <path d="M30,16 Q34,10 38,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="38" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
+        <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,26 C36,25 44,24 48,28 C51,32 48,37 43,35 C38,33 34,30 32,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#1c1422" opacity="0.92"/>
+      <circle cx="30" cy="16" r="2.2" fill="#1c1422" opacity="0.92"/>
+      <path d="M30,16 Q26,10 22,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="22" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
+      <path d="M30,16 Q34,10 38,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="38" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
     </svg>
   </div>
-  <div class="butterfly" style="top:72%; left:105%; width:28px; height:28px; animation:fly-rtl 16s linear 10s infinite; --drift:-35px;">
+  <div class="butterfly" style="top:72%; left:105%; width:50px; height:50px; animation:fly-rtl 16s linear 10s infinite; --drift:-35px;">
     <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#8e3fc9" opacity="0.78">
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; 25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.24s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#6a1f9c" opacity="0.65">
+        <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,21 C25,16 18,10 11,11 C6,12 7,19 11,21 C16,23 22,22 28,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; 20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.24s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#8e3fc9" opacity="0.78">
+        <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,26 C24,25 16,24 12,28 C9,32 12,37 17,35 C22,33 26,30 28,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; -25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.24s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#6a1f9c" opacity="0.65">
+        <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,21 C35,16 42,10 49,11 C54,12 53,19 49,21 C44,23 38,22 32,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; -20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.24s" repeatCount="indefinite"/>
-      </path>
-      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#2d1045" opacity="0.85"/>
-      <circle cx="30" cy="16" r="2.2" fill="#2d1045" opacity="0.85"/>
-      <path d="M30,16 Q26,10 22,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="22" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
-      <path d="M30,16 Q34,10 38,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="38" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
+        <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,26 C36,25 44,24 48,28 C51,32 48,37 43,35 C38,33 34,30 32,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#1c1422" opacity="0.92"/>
+      <circle cx="30" cy="16" r="2.2" fill="#1c1422" opacity="0.92"/>
+      <path d="M30,16 Q26,10 22,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="22" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
+      <path d="M30,16 Q34,10 38,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="38" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
     </svg>
   </div>
-  <div class="butterfly" style="top:44%; left:-8%; width:44px; height:44px; animation:fly-ltr 32s linear 14s infinite; --drift:20px;">
+  <div class="butterfly" style="top:44%; left:-8%; width:75px; height:75px; animation:fly-ltr 32s linear 14s infinite; --drift:20px;">
     <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#a6878d" opacity="0.78">
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; 25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.48s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#8f7176" opacity="0.65">
+        <path d="M30,22 C26,14 14,4 5,7 C-2,10 0,21 7,24 C14,27 23,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,21 C25,16 18,10 11,11 C6,12 7,19 11,21 C16,23 22,22 28,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; 20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.48s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#a6878d" opacity="0.78">
+        <path d="M30,26 C24,24 12,22 6,28 C2,33 7,41 15,38 C22,36 27,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M28,26 C24,25 16,24 12,28 C9,32 12,37 17,35 C22,33 26,30 28,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 22; -25 30 22; 0 30 22" keyTimes="0;0.5;1" dur="0.48s" repeatCount="indefinite"/>
-      </path>
-      <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#8f7176" opacity="0.65">
+        <path d="M30,22 C34,14 46,4 55,7 C62,10 60,21 53,24 C46,27 37,25 30,22 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,21 C35,16 42,10 49,11 C54,12 53,19 49,21 C44,23 38,22 32,21 Z" fill="#5b3e96" opacity="0.95"/>
+      </g>
+      <g>
         <animateTransform attributeName="transform" type="rotate" values="0 30 26; -20 30 26; 0 30 26" keyTimes="0;0.5;1" dur="0.48s" repeatCount="indefinite"/>
-      </path>
-      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#2d1045" opacity="0.85"/>
-      <circle cx="30" cy="16" r="2.2" fill="#2d1045" opacity="0.85"/>
-      <path d="M30,16 Q26,10 22,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="22" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
-      <path d="M30,16 Q34,10 38,7" stroke="#2d1045" stroke-width="0.7" fill="none" opacity="0.75"/>
-      <circle cx="38" cy="7" r="1.2" fill="#2d1045" opacity="0.7"/>
+        <path d="M30,26 C36,24 48,22 54,28 C58,33 53,41 45,38 C38,36 33,31 30,26 Z" fill="#1c1422" opacity="0.92"/>
+        <path d="M32,26 C36,25 44,24 48,28 C51,32 48,37 43,35 C38,33 34,30 32,26 Z" fill="#3d2766" opacity="0.95"/>
+      </g>
+      <ellipse cx="30" cy="27" rx="1.8" ry="10" fill="#1c1422" opacity="0.92"/>
+      <circle cx="30" cy="16" r="2.2" fill="#1c1422" opacity="0.92"/>
+      <path d="M30,16 Q26,10 22,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="22" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
+      <path d="M30,16 Q34,10 38,7" stroke="#1c1422" stroke-width="0.7" fill="none" opacity="0.85"/>
+      <circle cx="38" cy="7" r="1.2" fill="#1c1422" opacity="0.85"/>
     </svg>
   </div>
 
@@ -284,7 +328,9 @@
       <div class="testimonial-card"><blockquote>"I feel more confident, focused, and intentional in the way I approach my life."</blockquote><cite>Jen</cite></div>
       <div class="testimonial-card"><blockquote>"I came away with greater clarity, a stronger sense of ownership, and a noticeable shift in my mindset."</blockquote><cite>A-J</cite></div>
       <div class="testimonial-card"><blockquote>"She has a natural gift of listening that gets you to the real root of what you're explaining."</blockquote><cite>Olly</cite></div>
-      <div class="testimonial-card"><blockquote>"The tools I have gained are ones I will continue to use throughout my life."</blockquote><cite>Katie S-O</cite></div>
+      <div class="testimonial-card"><blockquote>"She turned what had felt like an overwhelming problem into something I knew I could overcome."</blockquote><cite>Sofia</cite></div>
+      <div class="testimonial-card"><blockquote>"I always felt lighter after we talked, like I could breathe a bit easier."</blockquote><cite>Steve B</cite></div>
+      <div class="testimonial-card"><blockquote>"She was the perfect sounding board as I struggled with these issues, and successful in reframing negativities into a driver for positive change."</blockquote><cite>Steve T</cite></div>
     </div>
   </div>
 </div>
