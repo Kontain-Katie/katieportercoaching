@@ -54,15 +54,12 @@
   .content p { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
 
   .steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 1rem; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(112,48,160,0.18); }
-  .step { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 1.25rem; border-bottom: 1px solid rgba(112,48,160,0.1); transition: background 0.15s; }
+  .step { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.15); transition: background 0.15s; background: #a973cf; }
   .step:last-child { border-bottom: none; }
-  .step:nth-child(odd)  { background: #ffffff; }
-  .step:nth-child(even) { background: #f0e6f8; }
-  .step:hover { background: #e6d4f5; }
-  .step-num { background: var(--purple); color: white; font-weight: 700; font-size: 13px; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-  .step:nth-child(even) .step-num { background: var(--purple-dark); }
-  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: var(--purple-dark); margin-bottom: 0.2rem; }
-  .step-body p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+  .step:hover { background: #9c5fc7; }
+  .step-num { background: rgba(255,255,255,0.25); color: white; font-weight: 700; font-size: 15px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-body h3 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 0.25rem; }
+  .step-body p { font-size: 0.9rem; color: var(--purple-dark); margin: 0; line-height: 1.6; }
 
   .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem; }
   .detail-card { background: var(--purple-pale); border-radius: var(--radius); padding: 1.1rem 1.25rem; border: 0.5px solid var(--border); }
@@ -194,6 +191,7 @@
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    white-space: nowrap;
     transition: background 0.15s, transform 0.1s;
     margin-top: 0.25rem;
   }
@@ -249,17 +247,17 @@
 
 <div class="content">
   <h2>What is coaching?</h2>
-  <p>Coaching isn't advice, and it isn't therapy. It's a structured conversation that helps you get clearer on what you want, understand what's getting in the way, and decide what to do next. I ask the questions — you find the answers.</p>
+  <p>Coaching isn't advice, and it isn't therapy. It's a structured conversation that helps you get clearer on what you want, understand what's getting in the way, and decide what to do next. I ask the questions, you find the answers.</p>
   <p>Sessions are confidential and completely led by your agenda. There's no judgement, no pressure, and no prescribed outcome. Just space to think.</p>
 
   <h2>How a session works</h2>
   <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Check in</h3><p>We start by making sure you're settled and ready. A moment to arrive before we begin.</p></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Set your goal for the session</h3><p>You tell me what you'd like to focus on today. We agree on what a good outcome looks like.</p></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Explore where you are now</h3><p>We look honestly at your current situation: what's happening, how it feels, what you've already tried.</p></div></div>
-    <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Open up your options</h3><p>Together we explore possibilities you may not have considered. What could you do? What would help?</p></div></div>
-    <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Decide on your next step</h3><p>You leave with something concrete, a commitment to yourself, however small, that moves you forward.</p></div></div>
-    <div class="step"><div class="step-num">6</div><div class="step-body"><h3>Close and reflect</h3><p>We end with a key takeaway from the session, something you'll carry with you.</p></div></div>
+    <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Settle in</h3><p>Kettle on, shoulders down. A minute to land before we dive in.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Pick today's mission</h3><p>You choose what we're tackling. We shake hands on what "job done" looks like.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Tell it like it is</h3><p>No filters here. What's really going on, how it feels, what you've already tried.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Throw ideas at the wall</h3><p>We get creative. What if you did this? What if you didn't? Nothing's off the table.</p></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Pick your next move</h3><p>You walk away with one clear step, big or small, that's actually yours.</p></div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-body"><h3>Mic drop moment</h3><p>We end on the one thing worth taking with you.</p></div></div>
   </div>
 
   <h2>Practical details</h2>
@@ -289,7 +287,7 @@
         <li>Wheel of Life assessment</li>
       </ul>
       <p class="package-investment">Investment discussed on your free chemistry call.</p>
-      <a href="contact.html" class="btn-primary">Book your free call</a>
+      <a href="contact.html" class="btn-primary">Start with three</a>
     </div>
 
     <div class="package-card package-featured">
@@ -306,7 +304,7 @@
         <li>Session recordings on request</li>
       </ul>
       <p class="package-investment">Investment discussed on your free chemistry call.</p>
-      <a href="contact.html" class="btn-primary">Book your free call</a>
+      <a href="contact.html" class="btn-primary">Choose six sessions</a>
     </div>
 
     <div class="package-card">
@@ -321,7 +319,7 @@
         <li>Wheel of Life assessment</li>
       </ul>
       <p class="package-investment">Investment discussed on your free chemistry call.</p>
-      <a href="contact.html" class="btn-primary">Book your free call</a>
+      <a href="contact.html" class="btn-primary">Go flexible</a>
     </div>
 
   </div>
@@ -331,7 +329,7 @@
 
 <div class="bottom-cta">
   <h2>Ready to take the first step?</h2>
-  <p>Book a free introductory call. No pressure, no commitment — just a conversation to see if we're a good fit.</p>
+  <p>Book a free introductory call. No pressure, no commitment, just a conversation to see if we're a good fit.</p>
   <a href="contact.html" class="btn-white">Book your free call</a>
 </div>
 
