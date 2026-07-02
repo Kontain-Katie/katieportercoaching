@@ -53,13 +53,15 @@
   .content h2:first-child { margin-top: 0; }
   .content p { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
 
-  .steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 1rem; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(112,48,160,0.18); }
-  .step { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.15); transition: background 0.15s; background: #a973cf; }
-  .step:last-child { border-bottom: none; }
-  .step:hover { background: #9c5fc7; }
-  .step-num { background: rgba(255,255,255,0.25); color: white; font-weight: 700; font-size: 15px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-  .step-body h3 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 0.25rem; }
-  .step-body p { font-size: 0.9rem; color: var(--purple-dark); margin: 0; line-height: 1.6; }
+  .steps { position: relative; margin-bottom: 1rem; padding-top: 0.25rem; }
+  .steps::before { content: ""; position: absolute; left: 21px; top: 8px; bottom: 8px; width: 1px; background: rgba(112,48,160,0.22); }
+  .step { display: flex; gap: 1.1rem; align-items: flex-start; padding: 0 0 1.6rem; position: relative; }
+  .step:last-child { padding-bottom: 0; }
+  .step-num { background: #ffffff; border: 1.5px solid var(--purple); color: var(--purple); font-weight: 600; font-size: 15px; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
+  .step:last-child .step-num { background: var(--purple); color: white; }
+  .step-body { padding-top: 8px; }
+  .step-body h3 { font-size: 1.35rem; font-weight: 600; color: var(--purple); margin-bottom: 0.25rem; }
+  .step-body p { font-size: 1rem; color: var(--text-secondary); margin: 0; line-height: 1.6; }
 
   .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem; }
   .detail-card { background: var(--purple-pale); border-radius: var(--radius); padding: 1.1rem 1.25rem; border: 0.5px solid var(--border); }
