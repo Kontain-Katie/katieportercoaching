@@ -85,10 +85,31 @@
   .testimonials-inner .section-label, .testimonials-inner h2 { text-align: center; }
   .testimonials-inner .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 0.75rem; }
   .testimonials-inner h2 { margin-bottom: 2.5rem; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--purple-mid); }
-  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
-  .testimonial-card { background: var(--purple-card); border-radius: 8px; padding: 1.75rem 1.75rem 1.5rem; border-left: 3px solid var(--purple); position: relative; display: flex; flex-direction: column; height: 100%; }
-  .testimonial-card blockquote { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin: 0 0 0.5rem; flex-grow: 1; }
-  .testimonial-card cite { font-size: 1rem; font-weight: 600; color: var(--text-secondary); font-style: normal; display: flex; align-items: center; gap: 0.6rem; }
+  .testimonials-stage { position: relative; max-width: 900px; margin: 0 auto; height: 300px; }
+  .testimonial-card {
+    position: absolute; top: 50%; left: 50%;
+    width: 380px; height: 230px;
+    background: var(--purple-card); border-radius: 10px;
+    padding: 1.75rem; border-left: 3px solid var(--purple);
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform 0.65s cubic-bezier(.4,0,.2,1), opacity 0.65s ease, box-shadow 0.65s ease, border-left-width 0.65s ease;
+    box-shadow: 0 8px 20px rgba(74,31,106,0.10);
+  }
+  .testimonial-card blockquote { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; font-style: italic; margin: 0; flex: 1; display: flex; align-items: center; }
+  .testimonial-card cite { font-size: 1rem; font-weight: 600; color: var(--text-secondary); font-style: normal; display: flex; align-items: center; gap: 0.6rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .testimonial-card.is-active { border-left-width: 4px; box-shadow: 0 22px 45px rgba(74,31,106,0.28); }
+  .testimonials-controls { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 1.75rem; }
+  .testimonial-arrow { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--purple); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease; flex-shrink: 0; }
+  .testimonial-arrow:hover { background: var(--purple); border-color: var(--purple); color: #fff; transform: scale(1.06); }
+  .testimonial-arrow svg { width: 16px; height: 16px; }
+  .testimonial-dots { display: flex; justify-content: center; gap: 0.55rem; }
+  .testimonial-dot { width: 9px; height: 9px; border-radius: 50%; border: none; background: var(--border-strong); cursor: pointer; padding: 0; transition: background 0.3s ease, transform 0.3s ease; }
+  .testimonial-dot.is-active { background: var(--purple); transform: scale(1.35); }
+  .testimonials-stage { cursor: grab; }
+  .testimonials-stage.is-dragging { cursor: grabbing; }
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-card { transition: none; }
+  }
 
   .wheel-cta { background: linear-gradient(135deg, var(--purple-pale) 0%, var(--purple-light) 100%); border: 0.5px solid var(--border-strong); border-radius: var(--radius); padding: 1.75rem 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.85rem; margin-top: 1.5rem; }
   .wheel-cta-text h3 { font-size: 1.3rem; font-weight: 800; color: var(--purple); margin-bottom: 0.4rem; }
@@ -182,7 +203,7 @@
   }
 
   @media (max-width: 860px) and (min-width: 641px) {
-    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .testimonial-card { width: 320px; }
   }
 
   @media (max-width: 640px) {
@@ -195,7 +216,8 @@
     .section { padding: 3rem 1.25rem; }
     .intro-strip-inner { margin-top: 1.75rem; }
     .testimonials-bg { padding: 3rem 1.25rem; }
-    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonials-stage { height: 340px; }
+    .testimonial-card { width: 250px; height: 270px; padding: 1.4rem; }
     .bottom-cta { padding: 3rem 1.25rem; }
   }
 </style>
@@ -290,7 +312,7 @@
   <div class="testimonials-inner">
     <p class="section-label">What clients say</p>
     <h2>Real words from real people</h2>
-    <div class="testimonials-grid">
+    <div class="testimonials-stage" id="testimonialsStage">
       <div class="testimonial-card"><blockquote>"I feel more confident, focused, and intentional in the way I approach my life."</blockquote><cite>Jen</cite></div>
       <div class="testimonial-card"><blockquote>"I came away with greater clarity, a stronger sense of ownership, and a noticeable shift in my mindset."</blockquote><cite>A-J</cite></div>
       <div class="testimonial-card"><blockquote>"She has a natural gift of listening that gets you to the real root of what you're explaining."</blockquote><cite>Olly</cite></div>
@@ -298,6 +320,124 @@
       <div class="testimonial-card"><blockquote>"I always felt lighter after we talked, like I could breathe a bit easier."</blockquote><cite>Steve B</cite></div>
       <div class="testimonial-card"><blockquote>"She was the perfect sounding board as I struggled with these issues, and successful in reframing negativities into a driver for positive change."</blockquote><cite>Steve T</cite></div>
     </div>
+    <div class="testimonials-controls">
+      <button class="testimonial-arrow" id="testimonialPrev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="testimonial-dots" id="testimonialsDots"></div>
+      <button class="testimonial-arrow" id="testimonialNext" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
+    <script>
+      (function () {
+        var stage = document.getElementById('testimonialsStage');
+        var cards = Array.prototype.slice.call(stage.querySelectorAll('.testimonial-card'));
+        var dotsWrap = document.getElementById('testimonialsDots');
+        var prevBtn = document.getElementById('testimonialPrev');
+        var nextBtn = document.getElementById('testimonialNext');
+        var n = cards.length;
+        var active = 0;
+        var timer;
+
+        cards.forEach(function (_, i) {
+          var dot = document.createElement('button');
+          dot.className = 'testimonial-dot';
+          dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
+          dot.addEventListener('click', function () {
+            active = i;
+            render();
+            restartTimer();
+          });
+          dotsWrap.appendChild(dot);
+        });
+        var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.testimonial-dot'));
+
+        function render() {
+          cards.forEach(function (card, i) {
+            var raw = i - active;
+            while (raw > n / 2) raw -= n;
+            while (raw <= -n / 2) raw += n;
+            var abs = Math.abs(raw);
+            var tx, scale, opacity, z;
+            if (abs === 0) { tx = 0; scale = 1; opacity = 1; z = 5; }
+            else if (abs === 1) { tx = raw * 34; scale = 0.82; opacity = 0.55; z = 4; }
+            else if (abs === 2) { tx = raw * 58; scale = 0.66; opacity = 0; z = 3; }
+            else { tx = raw * 70; scale = 0.6; opacity = 0; z = 2; }
+            card.style.transform = 'translate(calc(-50% + ' + tx + '%), -50%) scale(' + scale + ')';
+            card.style.opacity = opacity;
+            card.style.zIndex = z;
+            card.style.pointerEvents = abs <= 1 ? 'auto' : 'none';
+            card.style.cursor = abs === 0 ? 'grab' : 'pointer';
+            card.classList.toggle('is-active', abs === 0);
+          });
+          dots.forEach(function (dot, i) {
+            dot.classList.toggle('is-active', i === active);
+          });
+        }
+
+        function next() {
+          active = (active + 1) % n;
+          render();
+        }
+
+        function prev() {
+          active = (active - 1 + n) % n;
+          render();
+        }
+
+        function restartTimer() {
+          clearInterval(timer);
+          timer = setInterval(next, 4500);
+        }
+
+        cards.forEach(function (card, i) {
+          card.addEventListener('click', function () {
+            if (i === active) return;
+            active = i;
+            render();
+            restartTimer();
+          });
+        });
+
+        prevBtn.addEventListener('click', function () { prev(); restartTimer(); });
+        nextBtn.addEventListener('click', function () { next(); restartTimer(); });
+
+        // Drag / swipe support (mouse and touch)
+        var dragStartX = null;
+        var dragging = false;
+
+        stage.addEventListener('pointerdown', function (e) {
+          dragStartX = e.clientX;
+          dragging = true;
+          stage.classList.add('is-dragging');
+          clearInterval(timer);
+        });
+
+        window.addEventListener('pointerup', function (e) {
+          if (!dragging) return;
+          dragging = false;
+          stage.classList.remove('is-dragging');
+          var dx = e.clientX - dragStartX;
+          if (Math.abs(dx) > 40) {
+            if (dx < 0) { next(); } else { prev(); }
+          }
+          restartTimer();
+        });
+
+        window.addEventListener('pointercancel', function () {
+          dragging = false;
+          stage.classList.remove('is-dragging');
+        });
+
+        stage.addEventListener('mouseenter', function () { clearInterval(timer); });
+        stage.addEventListener('mouseleave', function () { if (!dragging) restartTimer(); });
+
+        render();
+        restartTimer();
+      })();
+    </script>
   </div>
 </div>
 
