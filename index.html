@@ -24,7 +24,7 @@
     --radius:        14px;
     --font: "Segoe UI", system-ui, -apple-system, sans-serif;
   }
-  body { font-family: var(--font); background: var(--bg); color: var(--text-primary); min-height: 100vh; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; }
 
   nav {
     background: var(--surface);
@@ -85,7 +85,7 @@
   .testimonials-inner .section-label, .testimonials-inner h2 { text-align: center; }
   .testimonials-inner .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 0.75rem; }
   .testimonials-inner h2 { margin-bottom: 2.5rem; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--purple-mid); }
-  .testimonials-stage { position: relative; max-width: 900px; margin: 0 auto; height: 300px; }
+  .testimonials-stage { position: relative; max-width: 900px; margin: 0 auto; height: 300px; overflow: hidden; }
   .testimonial-card {
     position: absolute; top: 50%; left: 50%;
     width: 380px; height: 230px;
