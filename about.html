@@ -59,9 +59,26 @@
 
   .photo-wrap {
     float: right;
-    margin: 0 0 1rem 2rem;
+    margin: 0 0 0 2rem;
     width: 240px;
-    height: 420px;
+    height: 430px;
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+  }
+  .photo-wrap::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 480px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at 42% 32%, rgba(180,130,225,0.5) 0%, rgba(140,80,190,0.32) 45%, rgba(112,48,160,0.12) 75%, rgba(112,48,160,0) 100%);
+    box-shadow: 0 0 50px 18px rgba(150,90,210,0.18);
+    z-index: -1;
+    pointer-events: none;
   }
   .photo-wrap img {
     width: 100%;
@@ -69,6 +86,9 @@
     object-fit: cover;
     object-position: center top;
     display: block;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
   }
 
   .content h2 {
@@ -128,8 +148,9 @@
     .page-hero h1 { white-space: normal; }
     .page-hero p { white-space: normal; }
     .content { padding: 2rem 1.25rem; display: flex; flex-direction: column; }
-    .photo-wrap { order: -1; float: none; width: 220px; height: 300px; margin: 0 auto 2rem; display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(112,48,160,0.18); }
-    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .photo-wrap { order: -1; float: none; width: 220px; height: 300px; margin: 0 auto 2rem; display: block; overflow: visible; }
+    .photo-wrap::before { width: 260px; height: 260px; box-shadow: 0 0 40px 14px rgba(150,90,210,0.16); }
+    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 16px; box-shadow: 0 8px 24px rgba(112,48,160,0.18); -webkit-mask-image: none; mask-image: none; }
   }
 </style>
 </head>
@@ -164,7 +185,7 @@
   <div class="highlight-line">That's exactly where I work best.</div>
 
   <h2>My approach</h2>
-  <p>I've navigated anxiety, identity, and reinvention myself. I'm not coaching from a textbook, I'm coaching from experience. Using the GROW model as my foundation, every session is built around you, your agenda, your pace, and what's actually going on beneath the surface.</p>
+  <p>I've navigated anxiety, identity, and reinvention myself. I'm not coaching from a textbook, I'm coaching from experience. Every session is built on presence and partnership, shaped around you, your agenda, your pace, and what's actually going on beneath the surface.</p>
   <p>Sessions are available in person or online.</p>
   <div class="highlight-line">I'm there when you need me, I step back when you're ready to fly.</div>
 
