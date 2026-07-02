@@ -57,11 +57,17 @@
     overflow: hidden;
   }
 
+  .bio-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+  .bio-text { flex: 1; min-width: 0; }
+
   .photo-wrap {
-    float: right;
-    margin: 0 0 0 2rem;
+    flex-shrink: 0;
     width: 260px;
-    height: 515px;
+    height: 430px;
     position: relative;
     z-index: 0;
     isolation: isolate;
@@ -69,26 +75,25 @@
   .photo-wrap::before {
     content: "";
     position: absolute;
-    top: -10px;
+    top: -30px;
     left: 50%;
-    width: 260px;
-    height: 260px;
+    width: 420px;
+    height: 480px;
     transform: translateX(-50%);
     border-radius: 50%;
-    background: radial-gradient(circle at 42% 32%, rgba(180,130,225,0.4) 0%, rgba(150,90,210,0.2) 35%, rgba(150,90,210,0.06) 60%, rgba(150,90,210,0) 80%);
+    background: radial-gradient(circle at 42% 32%, rgba(180,130,225,0.35) 0%, rgba(150,90,210,0.16) 30%, rgba(150,90,210,0.05) 55%, rgba(150,90,210,0) 72%);
     z-index: -1;
     pointer-events: none;
   }
   .photo-wrap img {
     width: 260px;
-    height: 515px;
+    height: 430px;
     object-fit: cover;
     object-position: center top;
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
+
+  .highlight-line-flush { margin-top: 0 !important; }
 
   .content h2 {
     font-size: 1.1rem;
@@ -146,10 +151,11 @@
     .nav-cta { padding: 6px 10px; font-size: 11px !important; }
     .page-hero h1 { white-space: normal; }
     .page-hero p { white-space: normal; }
-    .content { padding: 2rem 1.25rem; display: flex; flex-direction: column; }
-    .photo-wrap { order: -1; float: none; width: 220px; height: 300px; margin: 0 auto 2rem; display: block; overflow: visible; }
-    .photo-wrap::before { top: 0; width: 300px; height: 300px; box-shadow: 0 0 30px 10px rgba(150,90,210,0.14); }
-    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; position: relative; border-radius: 16px; box-shadow: 0 8px 24px rgba(112,48,160,0.18); }
+    .content { padding: 2rem 1.25rem; }
+    .bio-row { flex-direction: column; align-items: center; gap: 0; }
+    .photo-wrap { order: -1; width: 220px; height: 300px; margin: 0 auto 2rem; }
+    .photo-wrap::before { top: 0; width: 260px; height: 260px; }
+    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 16px; box-shadow: 0 8px 24px rgba(112,48,160,0.18); }
   }
 </style>
 </head>
@@ -173,20 +179,23 @@
 
 <div class="content">
 
-  <h2>Who I work with</h2>
-  <p>I work with people who are ready to move forward. Whether you're going through a big life change, feeling overwhelmed, or wanting to show up differently in your own life. My approach is warm, grounded, and led by you. I will give you space to think clearly, feel more in control, and move at a pace that works for you.</p>
+  <div class="bio-row">
+    <div class="bio-text">
+      <h2>Who I work with</h2>
+      <p>I work with people who are ready to move forward. Whether you're going through a big life change, feeling overwhelmed, or wanting to show up differently in your own life. My approach is warm, grounded, and led by you. I will give you space to think clearly, feel more in control, and move at a pace that works for you.</p>
+      <p>Most people who come to me aren't in crisis. They're capable, often successful, and quietly wondering why it doesn't feel like enough. Something has shifted, or stopped fitting, and they can't quite name it yet.</p>
+      <div class="highlight-line">That's exactly where I work best.</div>
 
-  <div class="photo-wrap">
-    <img src="Katie.png" alt="Katie Porter, Life Coach">
+      <h2>My approach</h2>
+      <p>I've navigated anxiety, identity, and reinvention myself. I'm not coaching from a textbook, I'm coaching from experience. Every session is built on presence and partnership, shaped around you, your agenda, your pace, and what's actually going on beneath the surface.</p>
+      <p>Sessions are available in person or online.</p>
+    </div>
+    <div class="photo-wrap">
+      <img src="Katie.png" alt="Katie Porter, Life Coach">
+    </div>
   </div>
 
-  <p>Most people who come to me aren't in crisis. They're capable, often successful, and quietly wondering why it doesn't feel like enough. Something has shifted, or stopped fitting, and they can't quite name it yet.</p>
-  <div class="highlight-line">That's exactly where I work best.</div>
-
-  <h2>My approach</h2>
-  <p>I've navigated anxiety, identity, and reinvention myself. I'm not coaching from a textbook, I'm coaching from experience. Every session is built on presence and partnership, shaped around you, your agenda, your pace, and what's actually going on beneath the surface.</p>
-  <p>Sessions are available in person or online.</p>
-  <div class="highlight-line">I'm there when you need me, I step back when you're ready to fly.</div>
+  <div class="highlight-line highlight-line-flush">I'm there when you need me, I step back when you're ready to fly.</div>
 
   <h2>Professional background</h2>
   <p>With over two decades of professional experience, my career has spanned television production at ITV, Channel 4, Channel 5 and Sky, executive assistance at the most senior levels of broadcasting, and a current marketing leadership role at a growing IT consultancy. I have managed complex, high-pressure projects, supported senior executives, and built strong working relationships across demanding environments.</p>
