@@ -54,7 +54,7 @@
     max-width: 860px;
     margin: 0 auto;
     padding: 4rem 2rem;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .bio-row {
@@ -75,13 +75,15 @@
   .photo-wrap::before {
     content: "";
     position: absolute;
-    top: -30px;
+    top: 50%;
     left: 50%;
-    width: 420px;
-    height: 480px;
-    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(circle at 42% 32%, rgba(180,130,225,0.35) 0%, rgba(150,90,210,0.16) 30%, rgba(150,90,210,0.05) 55%, rgba(150,90,210,0) 72%);
+    background: radial-gradient(circle at 50% 50%, rgba(150,90,210,0.9) 0%, rgba(150,90,210,0.75) 45%, rgba(150,90,210,0.5) 70%, rgba(150,90,210,0.2) 88%, rgba(150,90,210,0) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 22%, rgba(0,0,0,0.45) 42%, rgba(0,0,0,0.8) 62%, rgba(0,0,0,1) 80%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 22%, rgba(0,0,0,0.45) 42%, rgba(0,0,0,0.8) 62%, rgba(0,0,0,1) 80%);
     z-index: -1;
     pointer-events: none;
   }
@@ -91,6 +93,8 @@
     object-fit: cover;
     object-position: center top;
     display: block;
+    position: relative;
+    z-index: 1;
   }
 
   .highlight-line-flush { margin-top: 0 !important; }
@@ -154,7 +158,15 @@
     .content { padding: 2rem 1.25rem; }
     .bio-row { flex-direction: column; align-items: center; gap: 0; }
     .photo-wrap { order: -1; width: 220px; height: 300px; margin: 0 auto 2rem; }
-    .photo-wrap::before { top: 0; width: 260px; height: 260px; }
+    .photo-wrap::before {
+      top: 50%;
+      left: 50%;
+      width: 260px;
+      height: 260px;
+      transform: translate(-50%, -50%);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 22%, rgba(0,0,0,0.45) 42%, rgba(0,0,0,0.8) 62%, rgba(0,0,0,1) 80%);
+      mask-image: linear-gradient(to top, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 22%, rgba(0,0,0,0.45) 42%, rgba(0,0,0,0.8) 62%, rgba(0,0,0,1) 80%);
+    }
     .photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 16px; box-shadow: 0 8px 24px rgba(112,48,160,0.18); }
   }
 </style>
@@ -191,7 +203,7 @@
       <p>Sessions are available in person or online.</p>
     </div>
     <div class="photo-wrap">
-      <img src="Katie.png" alt="Katie Porter, Life Coach">
+      <img src="Katie.png" alt="Katie Porter, Life Coach" width="260" height="430" loading="eager" fetchpriority="high" decoding="async">
     </div>
   </div>
 
