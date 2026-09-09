@@ -39,10 +39,11 @@
     z-index: 100;
   }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { text-decoration: none; font-size: 14px; color: var(--text-secondary); font-weight: 500; transition: color 0.15s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--purple); }
-  .nav-cta { background: var(--purple); color: white !important; padding: 8px 18px; border-radius: 8px; font-size: 13px !important; transition: background 0.15s !important; }
+  .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--text-primary); font-weight: 600; transition: background 0.15s, color 0.15s; padding: 8px 16px; border-radius: 8px; }
+  .nav-links a:hover { background: var(--purple-pale); color: var(--purple); }
+  .nav-links a.active { background: var(--purple-light); color: var(--purple); }
+  .nav-cta { background: var(--purple); color: white !important; padding: 10px 20px !important; border-radius: 8px; font-size: 13px !important; transition: background 0.15s !important; margin-left: 0.75rem; }
   .nav-cta:hover { background: var(--purple-dark) !important; color: white !important; }
 
   .hero { background: linear-gradient(135deg, var(--purple-pale) 0%, var(--purple-light) 100%); padding: 5rem 2rem 3rem; text-align: center; position: relative; overflow: hidden; }
@@ -109,6 +110,21 @@
   .testimonials-stage.is-dragging { cursor: grabbing; }
   @media (prefers-reduced-motion: reduce) {
     .testimonial-card { transition: none; }
+  }
+
+  .explore-section { background: var(--surface); padding: 3rem 2rem; }
+  .explore-inner { max-width: 1000px; margin: 0 auto; }
+  .explore-inner .section-label, .explore-inner h2 { text-align: center; }
+  .explore-inner h2 { margin-bottom: 2rem; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--purple-mid); }
+  .explore-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .explore-card { display: flex; flex-direction: column; gap: 0.6rem; background: var(--purple-pale); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.5rem; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+  .explore-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(74,31,106,0.14); border-color: var(--border-strong); }
+  .explore-card-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--purple); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .explore-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+  .explore-card p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.55; margin: 0; }
+  .explore-card-link { font-size: 0.85rem; font-weight: 700; color: var(--purple); display: flex; align-items: center; gap: 0.35rem; margin-top: 0.25rem; }
+  @media (max-width: 700px) {
+    .explore-grid { grid-template-columns: 1fr; }
   }
 
   .wheel-cta { background: linear-gradient(135deg, var(--purple-pale) 0%, var(--purple-light) 100%); border: 0.5px solid var(--border-strong); border-radius: var(--radius); padding: 1.75rem 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.85rem; margin-top: 1.5rem; }
@@ -215,6 +231,7 @@
     .hero-logo { height: auto !important; width: 100% !important; max-width: 320px !important; }
     .section { padding: 3rem 1.25rem; }
     .intro-strip-inner { margin-top: 1.75rem; }
+    .explore-section { padding: 2.5rem 1.25rem; }
     .testimonials-bg { padding: 3rem 1.25rem; }
     .testimonials-stage { height: 340px; }
     .testimonial-card { width: 250px; height: 270px; padding: 1.4rem; }
@@ -292,6 +309,33 @@
   </div>
 
 </section>
+
+<div class="explore-section">
+  <div class="explore-inner">
+    <p class="section-label">Get to know me</p>
+    <h2>A little more before you get in touch</h2>
+    <div class="explore-grid">
+      <a href="about.html" class="explore-card">
+        <div class="explore-card-icon">&#9733;</div>
+        <h3>About me</h3>
+        <p>My story, my approach, and why I do this work.</p>
+        <span class="explore-card-link">Read my story &rarr;</span>
+      </a>
+      <a href="work-with-me.html" class="explore-card">
+        <div class="explore-card-icon">&#8635;</div>
+        <h3>Work with me</h3>
+        <p>How sessions work, what to expect, and how we'll get started.</p>
+        <span class="explore-card-link">See how it works &rarr;</span>
+      </a>
+      <a href="contact.html" class="explore-card">
+        <div class="explore-card-icon">&#9993;</div>
+        <h3>Get in touch</h3>
+        <p>Book a free, no-pressure introductory call.</p>
+        <span class="explore-card-link">Book your call &rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 <div class="section section-center" style="padding-bottom: 1rem;">
   <p class="section-label">What I offer</p>
