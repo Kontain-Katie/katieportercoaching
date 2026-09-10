@@ -131,6 +131,21 @@
     border-radius: 20px;
     white-space: nowrap;
   }
+  .package-badge-secondary {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-muted);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
   .package-label {
     font-size: 11px;
     font-weight: 700;
@@ -155,6 +170,22 @@
     color: var(--text-secondary);
     line-height: 1.65;
     margin: 0;
+  }
+  .package-fit {
+    font-size: 0.8125rem;
+    color: var(--purple-dark);
+    background: var(--purple-light);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    line-height: 1.55;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .package-fit strong {
+    color: var(--purple);
+    font-weight: 700;
   }
   .package-includes {
     list-style: none;
@@ -206,6 +237,9 @@
     font-size: 0.9375rem;
     color: var(--text-muted);
     font-style: italic;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .bottom-cta { background: var(--purple-dark); padding: 4rem 2rem; text-align: center; }
@@ -277,13 +311,14 @@
       <h3 class="package-name">Three Sessions</h3>
       <p class="package-detail">3 x 1 hour &nbsp;|&nbsp; Over 6 weeks</p>
       <p class="package-desc">Not sure where to start? This is a gentle way in. Three focused sessions to get you clear on what you want and what's been holding you back.</p>
+      <p class="package-fit"><strong>Best for:</strong> One issue, fast clarity.</p>
       <ul class="package-includes">
         <li>Free chemistry call</li>
         <li>3 x 1-hour coaching sessions via Zoom</li>
         <li>Email and WhatsApp support between sessions</li>
         <li>Wheel of Life assessment</li>
       </ul>
-      <p class="package-investment">Investment discussed on your free chemistry call.</p>
+      <p class="package-investment">Pricing is tailored, we'll cover it on your call.</p>
       <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/katieportercoaching/30min'});return false;" class="btn-primary">Start with three</a>
     </div>
 
@@ -293,6 +328,7 @@
       <h3 class="package-name">Six Sessions</h3>
       <p class="package-detail">6 x 1 hour &nbsp;|&nbsp; Over 3 months</p>
       <p class="package-desc">Real change takes time. Six sessions give us the depth and momentum to move you from where you are to where you actually want to be.</p>
+      <p class="package-fit"><strong>Best for:</strong> Lasting change over time.</p>
       <ul class="package-includes">
         <li>Free chemistry call</li>
         <li>6 x 1-hour coaching sessions via Zoom</li>
@@ -300,28 +336,29 @@
         <li>Wheel of Life assessment</li>
         <li>Session recordings on request</li>
       </ul>
-      <p class="package-investment">Investment discussed on your free chemistry call.</p>
+      <p class="package-investment">Pricing is tailored, we'll cover it on your call.</p>
       <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/katieportercoaching/30min'});return false;" class="btn-primary">Choose six sessions</a>
     </div>
 
     <div class="package-card">
+      <div class="package-badge-secondary">For existing clients</div>
       <div class="package-label">Flexible</div>
       <h3 class="package-name">As and When</h3>
       <p class="package-detail">Sessions used at your pace</p>
-      <p class="package-desc">Life doesn't run to a schedule. Buy a block of sessions and use them when you need them, with no fixed diary commitment.</p>
+      <p class="package-desc">For clients who've already worked with me and know how we work together. Buy a block of sessions and dip in whenever you need a reflective space, with no fixed diary commitment.</p>
+      <p class="package-fit"><strong>Best for:</strong> Returning clients only.</p>
       <ul class="package-includes">
-        <li>Free chemistry call</li>
         <li>Block of sessions to use flexibly</li>
         <li>Email and WhatsApp support</li>
-        <li>Wheel of Life assessment</li>
+        <li>Wheel of Life assessment on request</li>
       </ul>
-      <p class="package-investment">Investment discussed on your free chemistry call.</p>
-      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/katieportercoaching/30min'});return false;" class="btn-primary">Go flexible</a>
+      <p class="package-investment">Available once we've worked together, get in touch to set this up.</p>
+      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/katieportercoaching/30min'});return false;" class="btn-primary">Enquire about flexible support</a>
     </div>
 
   </div>
 
-  <p class="packages-note">Not sure which is right for you? That's exactly what the chemistry call is for.</p>
+  <p class="packages-note">New to coaching? Start with Three Sessions or Six Sessions. As and When is designed for clients continuing an existing relationship with me. If you're unsure which fits, the chemistry call will make it clear.</p>
 </section>
 
 <div class="bottom-cta">
