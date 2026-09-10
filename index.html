@@ -45,11 +45,10 @@
     z-index: 100;
   }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
-  .nav-links a { text-decoration: none; font-size: 14px; color: var(--text-primary); font-weight: 500; transition: background 0.15s, color 0.15s; padding: 8px 16px; border-radius: 8px; }
-  .nav-links a:hover { background: var(--purple-pale); color: var(--purple); }
-  .nav-links a.active { background: var(--purple-light); color: var(--purple); }
-  .nav-cta { background: var(--purple); color: white !important; padding: 10px 20px !important; border-radius: 8px; font-size: 13px !important; transition: background 0.15s !important; margin-left: 0.75rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--text-secondary); font-weight: 500; transition: color 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--purple); }
+  .nav-cta { background: var(--purple); color: white !important; padding: 8px 18px; border-radius: 8px; font-size: 13px !important; }
   .nav-cta:hover { background: var(--purple-dark) !important; color: white !important; }
 
   .hero { background: linear-gradient(135deg, var(--purple-pale) 0%, var(--purple-light) 100%); padding: 5rem 2rem 3rem; text-align: center; position: relative; overflow: hidden; }
