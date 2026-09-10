@@ -103,7 +103,9 @@
     box-shadow: 0 8px 20px rgba(74,31,106,0.10);
   }
   .testimonial-card blockquote { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; font-style: italic; margin: 0; flex: 1; display: flex; align-items: center; }
-  .testimonial-card cite { font-size: 1rem; font-weight: 600; color: var(--text-secondary); font-style: normal; display: flex; align-items: center; gap: 0.6rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .testimonial-card cite { font-style: normal; display: flex; flex-direction: column; gap: 0.15rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .testimonial-name { font-size: 1rem; font-weight: 700; color: var(--text-secondary); }
+  .testimonial-role { font-size: 0.8125rem; font-weight: 500; color: var(--text-muted); }
   .testimonial-card.is-active { border-left-width: 4px; box-shadow: 0 22px 45px rgba(74,31,106,0.28); }
   .testimonials-controls { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 1.75rem; }
   .testimonial-arrow { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--purple); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease; flex-shrink: 0; }
@@ -363,16 +365,16 @@
     <p class="section-label">What clients say</p>
     <h2>Real words from real people</h2>
     <div class="testimonials-stage" id="testimonialsStage">
-      <div class="testimonial-card"><blockquote>"I feel more confident, focused, and intentional in the way I approach my life."</blockquote><cite>Jen</cite></div>
-      <div class="testimonial-card"><blockquote>"I came away with greater clarity, a stronger sense of ownership, and a noticeable shift in my mindset."</blockquote><cite>A-J</cite></div>
-      <div class="testimonial-card"><blockquote>"She has a natural gift of listening that gets you to the real root of what you're explaining."</blockquote><cite>Olly</cite></div>
-      <div class="testimonial-card"><blockquote>"She turned what had felt like an overwhelming problem into something I knew I could overcome."</blockquote><cite>Sofia</cite></div>
-      <div class="testimonial-card"><blockquote>"I always felt lighter after we talked, like I could breathe a bit easier."</blockquote><cite>Steve B</cite></div>
-      <div class="testimonial-card"><blockquote>"She was the perfect sounding board as I struggled with these issues, and successful in reframing negativities into a driver for positive change."</blockquote><cite>Steve T</cite></div>
-      <div class="testimonial-card"><blockquote>"In a field of insincere pretenders, Katie is the rarest of gems: genuine empathy, shrewd insight and an eternal optimism. Life gets better thanks to people like her."</blockquote><cite>Saul G</cite></div>
-      <div class="testimonial-card"><blockquote>"She gently guided me into a more unique way of knowing what I'm capable of, and what I want from my life."</blockquote><cite>Conor W</cite></div>
-      <div class="testimonial-card"><blockquote>"Every pause, every question and every encouraging word felt intentional, allowing me to make progress on goals that had previously felt out of reach."</blockquote><cite>Lindsey H</cite></div>
-      <div class="testimonial-card"><blockquote>"Katie's thoughtful questions encouraged me to see things differently, and I began building healthier habits into my daily life."</blockquote><cite>Katie S</cite></div>
+      <div class="testimonial-card"><blockquote>"I feel more confident, focused, and intentional in the way I approach my life."</blockquote><cite><span class="testimonial-name">Jen</span><span class="testimonial-role">Bookkeeper</span></cite></div>
+      <div class="testimonial-card"><blockquote>"I came away with greater clarity, a stronger sense of ownership, and a noticeable shift in my mindset."</blockquote><cite><span class="testimonial-name">A-J</span><span class="testimonial-role">Executive Coach</span></cite></div>
+      <div class="testimonial-card"><blockquote>"She has a natural gift of listening that gets you to the real root of what you're explaining."</blockquote><cite><span class="testimonial-name">Olly</span><span class="testimonial-role">Sales Executive</span></cite></div>
+      <div class="testimonial-card"><blockquote>"She turned what had felt like an overwhelming problem into something I knew I could overcome."</blockquote><cite><span class="testimonial-name">Sofia</span><span class="testimonial-role">Teacher</span></cite></div>
+      <div class="testimonial-card"><blockquote>"I always felt lighter after we talked, like I could breathe a bit easier."</blockquote><cite><span class="testimonial-name">Steve B</span><span class="testimonial-role">Film Props</span></cite></div>
+      <div class="testimonial-card"><blockquote>"She was the perfect sounding board as I struggled with these issues, and successful in reframing negativities into a driver for positive change."</blockquote><cite><span class="testimonial-name">Steve T</span><span class="testimonial-role">Business Consultant</span></cite></div>
+      <div class="testimonial-card"><blockquote>"In a field of insincere pretenders, Katie is the rarest of gems: genuine empathy, shrewd insight and an eternal optimism. Life gets better thanks to people like her."</blockquote><cite><span class="testimonial-name">Saul G</span><span class="testimonial-role">TV Executive</span></cite></div>
+      <div class="testimonial-card"><blockquote>"She gently guided me into a more unique way of knowing what I'm capable of, and what I want from my life."</blockquote><cite><span class="testimonial-name">Conor W</span><span class="testimonial-role">Sales Executive</span></cite></div>
+      <div class="testimonial-card"><blockquote>"Every pause, every question and every encouraging word felt intentional, allowing me to make progress on goals that had previously felt out of reach."</blockquote><cite><span class="testimonial-name">Lindsey H</span><span class="testimonial-role">Teacher</span></cite></div>
+      <div class="testimonial-card"><blockquote>"Katie's thoughtful questions encouraged me to see things differently, and I began building healthier habits into my daily life."</blockquote><cite><span class="testimonial-name">Katie S</span><span class="testimonial-role">Designer</span></cite></div>
     </div>
     <div class="testimonials-controls">
       <button class="testimonial-arrow" id="testimonialPrev" aria-label="Previous testimonial">
